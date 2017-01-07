@@ -1,0 +1,104 @@
+\RequirePackage{etex}
+\documentclass{beamer}
+\usepackage[latin9]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{pictex}
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\title[]{Newton-Verfahren}
+\author{Dominik Eisele}
+\institute[WSS]{Werner-Siemens-Schule}
+\date{\today}
+\subject{Newton}
+\keywords{Newton, Newton-Verfahren}
+
+\usetheme{Singapore}
+\usecolortheme{rose}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{language=C}
+\lstset{numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	frame=l ,
+	xleftmargin=15pt,
+	xrightmargin=15pt,
+	basicstyle=\ttfamily\scriptsize,
+	stepnumber=1,
+	keywordstyle=\color{blue},		% keyword style
+	commentstyle=\color{dkgreen},	% comment style
+	stringstyle=\color{mauve}		% string literal style
+}
+
+%\AtBeginDocument{\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{0pt}}}
+%\AtBeginDocument{\addtobeamertemplate{block begin}{\setlength\abovedisplayshortskip{0pt}}}
+
+\let\oldsqrt\sqrt
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.3\ht0
+%0.3 ist das Maß für die Hakenlänge, relativ zum Inhalt der Wurzel
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+
+%\include{bild_ganze_folie.tex}
+
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Inhalt}
+	\tableofcontents
+\end{frame}
+
+
+\section{Allgemeine Informationen}
+\subsection{Allgemeine Informationen-dots}
+
+\begin{frame}{Geschichte}
+	\begin{itemize}
+		\item wird auch Newton-Raphson-Verfahren genannt
+		\item benannt nach Sir Isaac Newton (1669) und Joseph Raphson (1690)
+		\item veröffentlicht 1671 in "`Methodus fluxionum et serierum infinitarum"'
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Ziel des Newton-Verfahrens}
+	\begin{itemize}
+		\item Lösung von nichtlinearen Gleichungen und Gleichungssystemen
+		\item Annäherung an die Nullstellen
+		\item Lösung von Gleichungen in der Form: $f(x) = 0$
+	\end{itemize}
+\end{frame}
+
+
+\section{Quellen}
+\subsection{Quellen-dots}
+\begin{frame}{Quellen}
+	\begin{itemize}
+		\item 
+		\item 
+		\item
+		\item
+		\item 
+	\end{itemize}
+\end{frame}
+
+
+\end{document}
