@@ -228,19 +228,65 @@
 \section{Anwendung}
 \subsection{Anwendung-dots}
 
-\begin{frame}{}
+\begin{frame}{Kehrwertbildung}
+\end{frame}
+
+\section{Fazit}
+\subsection{Fazit-dots}
+
+\begin{frame}{Vorteile des Newton Verfahrens}
+	\begin{itemize}
+		\item schnelle Konvergenz möglich, da die Anzahl der signifikanten Stellen bei jeder Iteration verdoppelt wird
+		\item nur ein Anfangswert nötig
+		\item in der Praxis sollte eine Hybridform aus verschiedenen Verfahren zum Einsatz kommen
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Nachteile des Newton Verfahrens}
+	\begin{itemize}
+		\item keine Konvergenz garantiert
+		\item bei Extrema oder in ihrer Nähe kommt es zu Problemen, wie z.\,B. Division durch 0 bei $f^\prime(x) = 0$
+	\end{itemize}
 	
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{Sattelstelle.png}
+		\label{fig:sattelstelle}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Nachteile des Newton Verfahrens}
+	\begin{itemize}
+		\item keine Konvergenz garantiert
+		\item es kann Vorkommen dass ein nicht konvergenter Zyklus entsteht
+	\end{itemize}
+	
+	\begin{figure}
+		\includegraphics[width=0.5\linewidth]{Ring.png}
+		\label{fig:ring}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Nachteile des Newton Verfahrens}
+	\begin{itemize}
+		\item springen auf eine andere Nullstelle möglich
+		\item kann bei oszillierenden Funktionen vorkommen
+	\end{itemize}
+	
+	\begin{figure}
+		\includegraphics[width=0.7\linewidth]{hupfen.png}
+		\label{fig:hupfen}
+	\end{figure}
 \end{frame}
 
 \section{Quellen}
 \subsection{Quellen-dots}
 \begin{frame}{Quellen}
 	\begin{itemize}
+		\item An Accurate, High Speed Implementation of Division by Reciprocal Approximation, D.L. Fowler and J.E. Smith, Astronautics Corperation of Amerika
+		\item Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg
+		\item Rechnerarithmetik Thema: Iterative Division, Quadratwurzelberechnung, Eberhard Zehendner, Friedrich-Schiller-Universität Jena
 		\item hs-esslingen.de/fileadmin/medien/mitarbeiter/koch/\\numerische\_methoden\_skript.pdf (Abgerufen: 08.01.2017, 02:10 Uhr)
 		\item de.wikipedia.org/wiki/Newton-Verfahren (Abgerufen: 08.01.2017, 02:10 Uhr)
-		\item
-		\item
-		\item 
 	\end{itemize}
 \end{frame}
 
