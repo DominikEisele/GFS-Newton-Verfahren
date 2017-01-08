@@ -130,15 +130,19 @@
 			\draw[color=ffqqqq] (2.1,5.2) node {$g(x) = 0,5x^3 - 2x^2 + 0,5x + 2$};
 		\end{scriptsize} 																	\pause
 		
-		\node (1) at (-1.60298,-6) {\textsf{X}};													\pause
+		\node (1) at (-1.603,0) {\textsf{X}};														\pause
+		
+		\draw [blue] (-1.603,0) -- (-1.603,-6);			 											\pause
+
+		\node (2) at (-1.60298,-6) {\textsf{X}};													\pause
 		
 		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{10.76624*\x+11.25802});					\pause
 		
-		\node (2) at (-1.04568,0) {\textsf{X}};														\pause
+		\node (3) at (-1.04568,0) {\textsf{X}};														\pause
 		
 		\draw [blue] (-1.04568,0) -- (-1.04568,-1.21842);	 											\pause
 		
-		\node (3) at (-1.04568,-1.21842) {\textsf{X}};												\pause
+		\node (4) at (-1.04568,-1.21842) {\textsf{X}};												\pause
 		
 		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{6.32288*\x+5.33027});					\pause
 		
@@ -209,16 +213,23 @@
 	\end{equation*}																		\pause
 	
 	\begin{itemize}
-		\item Ziel: Nullstelle der Ableitung, d.h. die Gleichung der Ableitung wird benötigt							\pause
+		\item Ziel: Nullstelle der Ableitung															\pause
 		\item allgemeine Geradengleichung: $y = mx +  b$												\pause
 		\item Berührpunkt $P$ der Funktion mit der Tangente: $P\left( x_0 | f(x_0) \right)$							\pause
+		\item Steigung an der Stelle $x_0$: $f^\prime(x_0)$
 		\item Einsetzen in Geradengleichung: $f(x_0) = f^\prime(x_0) \cdot x_0  + b$ \\
 			$\rightarrow b = f(x_0) - f^\prime(x_0) \cdot x_0$											\pause
 		\item Einsetzen in Geradengleichung: $y = f^\prime(x_0) \cdot x  + f(x_0) - f^\prime(x_0) \cdot x_0$				\pause
 		\item Nullstelle bestimmen: $0 = f^\prime(x_0) \cdot x_1  + f(x_0) - f^\prime(x_0) \cdot x_0$ \\
 			$\rightarrow \boxed{x_1 =x_0 - \frac{f(x_0)}{f^\prime(x_0)}}$
 	\end{itemize}
+\end{frame}
 
+\section{Anwendung}
+\subsection{Anwendung-dots}
+
+\begin{frame}{}
+	
 \end{frame}
 
 \section{Quellen}
