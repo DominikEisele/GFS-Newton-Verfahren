@@ -95,8 +95,8 @@
 	\end{itemize}
 \end{frame}
 
-\section{Graphische Berechnung}
-\subsection{Graphische Berechnung-dots}
+\section{Graphische Herleitung}
+\subsection{Graphische Herleitung-dots}
 
 \begin{frame}{Vorgehen bei Konstruktion}
 	\begin{itemize}
@@ -108,7 +108,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Graphische Berechnung}
+\begin{frame}{Graphische Herleitung}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=0.4cm]
 		\draw[->,color=black] (-4.2,0.) -- (4.2,0.);
 		
@@ -165,6 +165,39 @@
 			Berechneter Wert   		& -0,8136       \\ \bottomrule
 		\end{tabular}
 		\end{table}
+\end{frame}
+
+\section{Berechnung}
+\subsection{Berechnung-dots}
+
+\begin{frame}{Iterationsformel}
+	\begin{equation*}
+		\boxed{x_{n+1} = x_{n} - \frac{f(x_{n})}{f^\prime(x_{n})}}
+	\end{equation*}																		\pause
+
+	Vorgehensweise zur Berechnung von Nullstellen:													\pause
+	\begin{itemize}
+		\item Funktion $f(x)$ ableiten															\pause
+		\item geeigneten Näherungswert als Startwert wählen $(x_0)$										\pause
+		\item diesen für $x_n$ einsetzen und $x_1$ berechnen											\pause
+		\item für $x_n$ nun $x_1$ wählen und $x_2$ berechnen											\pause
+		\item dieses Verfahren nun so lange wiederholen bis man die gewünschte Genauigkeit erreicht hat
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiel zur Iterationsformel}
+	\begin{equation*}
+		\boxed{x_{n+1} = x_{n} - \frac{f(x_{n})}{f^\prime(x_{n})}}
+	\end{equation*}																		\pause
+
+	Vorgehensweise zur Berechnung von Nullstellen:													\pause
+	\begin{itemize}
+		\item Funktion $f(x)$ ableiten															\pause
+		\item geeigneten Näherungswert als Startwert wählen $(x_0)$										\pause
+		\item diesen für $x_n$ einsetzen und $x_1$ berechnen											\pause
+		\item für $x_n$ nun $x_1$ wählen und $x_2$ berechnen											\pause
+		\item dieses Verfahren nun so lange wiederholen bis man die gewünschte Genauigkeit erreicht hat
+	\end{itemize}
 \end{frame}
 
 \section{Quellen}
