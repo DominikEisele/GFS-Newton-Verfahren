@@ -94,10 +94,20 @@
 	\end{itemize}
 \end{frame}
 
-\section{Graphische Konstruktion}
-\subsection{Graphische Konstruktion-dots}
+\section{Graphische Berechnung}
+\subsection{Graphische Berechnung-dots}
 
-\begin{frame}{Graphische Konstruktion}
+\begin{frame}{Vorgehen bei Konstruktion}
+	\begin{itemize}
+		\item Eine beliebige Abszisse als Startwert wählen, daraus den Funktionswert berechnen	\pause
+		\item An die berechnete Stelle des Graphens eine Tangente anlegen				\pause
+		\item Den Schnittpunkt der Tangente mit der x-Achse berechnen					\pause
+		\item Dieser Schnittpunkt kann nun als Startwert angenommen werden				\pause
+		\item Die Schritte so oft wiederholen bis man die gewünschte Genauigkeit erreicht hat
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Graphische Berechnung}
 	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=0.4cm]
 		\draw[->,color=black] (-4.2,0.) -- (4.2,0.);
 		
@@ -139,13 +149,12 @@
 	\end{tikzpicture} 
 \end{frame}
 
-\begin{frame}{Funktionswerte Werte}
+\begin{frame}{Abszissenwert}
 	\begin{table}[]
 		\centering
-		
 		\begin{tabular}{@{}ll@{}}
 			\toprule
-			Berechnungsschritt		& Funktionswert \\ \midrule
+			Berechnungsschritt		& Abszissenwert \\ \midrule
 			0                  			& -1,6029       \\
 			1                  			& -1,0456       \\
 			2                  			& -0,8430       \\
