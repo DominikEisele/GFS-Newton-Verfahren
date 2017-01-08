@@ -236,14 +236,25 @@
 		\item $f^\prime(x) = -\frac{1}{x²}$
 		\item daraus ergibt sich die Iterationsfunktion:
 			$\begin{array}{rl}
-				F(x)	&= x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}\\
-					&= x \cdot (2 - A \cdot x)
+				F(x)	&= x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}					\\
+				F(x)	&= x \cdot (2 - A \cdot x)
 			\end{array}$
-		\item optimaler Startwert: $x_0 = 4 \cdot (\sqrt{3} - 1) - 2$ 
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Beispiel zur Kehrwertbildung}
+	Kehrwertbildung von $A = 3$:											\\
+	Startwert: $x_0 = 0,2$												\\
+	$x_n = x \cdot (2 - A \cdot x)$											\\
+	\\
+	$\begin{array}{rccl}
+		x_0 &	&								&= 0,2				\\
+		x_1 &=& 0,2 \cdot (2 - 3 \cdot 0,2) 				&= 0,3				\\
+		x_2 &=& 0,28 \cdot (2 - 3 \cdot 0,28) 				&= 0,3				\\
+		x_3 &=& 0,3248 \cdot (2 - 3 \cdot 0,3248)			&= 0,333				\\
+		x_4 &=& 0,33311488 \cdot (2 - 3 \cdot 0,33311488)		&= 0,333\,333			\\
+		x_5 &=& 0,3333331907 \cdot (2 - 3 \cdot 0,3333331907)	&= 0,333\,333\,333\,333
+	\end{array}$
 \end{frame}
 
 \section{Fazit}
