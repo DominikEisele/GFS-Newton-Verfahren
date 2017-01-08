@@ -8,12 +8,16 @@
 \usepackage{pictex}
 \usepackage{tikz}
 \usepackage{siunitx}
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{booktabs}
 
 \title[]{Newton-Verfahren}
 \author{Dominik Eisele}
 \institute[WSS]{Werner-Siemens-Schule}
 \date{\today}
-\subject{Newton}
+\subject{Newton Verfahren}
 \keywords{Newton, Newton-Verfahren}
 
 \usetheme{Singapore}
@@ -25,6 +29,7 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{ffqqqq}{rgb}{255,0,0}
 
 \lstset{language=C}
 \lstset{numbers=left,
@@ -38,8 +43,8 @@
 	basicstyle=\ttfamily\scriptsize,
 	stepnumber=1,
 	keywordstyle=\color{blue},		% keyword style
-	commentstyle=\color{dkgreen},	% comment style
-	stringstyle=\color{mauve}		% string literal style
+	commentstyle=\color{dkgreen},		% comment style
+	stringstyle=\color{mauve}			% string literal style
 }
 
 %\AtBeginDocument{\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{0pt}}}
@@ -81,12 +86,76 @@
 
 \begin{frame}{Ziel des Newton-Verfahrens}
 	\begin{itemize}
-		\item Lösung von nichtlinearen Gleichungen und Gleichungssystemen
 		\item Annäherung an die Nullstellen
+		\item Lösung von allen nichtlinearen Gleichungen und Gleichungssystemen
 		\item Lösung von Gleichungen in der Form: $f(x) = 0$
+		\item kommt immer dann zum Einsatz, wenn die Gleichung nicht durch die bekannten Methoden lösbar ist, wie z.\,B. Mitternachtsformel, quadratische
+			Ergänzung, ...
 	\end{itemize}
 \end{frame}
 
+\section{Graphische Konstruktion}
+\subsection{Graphische Konstruktion-dots}
+
+\begin{frame}{Graphische Konstruktion}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=0.4cm]
+		\draw[->,color=black] (-4.2,0.) -- (4.2,0.);
+		
+		\foreach \x in {-4,-3,...,-1,1,2,...,4}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+		
+		\draw[->,color=black] (0,-8.2) -- (0,8.2);
+		
+		\foreach \y in {-8,-6,...,-2,2,4,6}
+		\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+				
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		\clip(-4.2,-8.2) rectangle (4.2,8.2);
+		
+		\draw[color=red,smooth,samples=100,domain=-4.2:4.2] plot(\x,{0.5*(\x)^(3.0)-2.0*(\x)^(2.0)+0.5*(\x)+2.0});
+		
+		\begin{scriptsize}
+			\draw[color=ffqqqq] (2.1,5.2) node {$g(x) = 0,5x³ - 2x² + 0,5x + 2$};
+		\end{scriptsize} 																	\pause
+		
+		\node (1) at (-1.60298,-6) {\textsf{X}};													\pause
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{10.76624*\x+11.25802});					\pause
+		
+		\node (2) at (-1.04568,0) {\textsf{X}};														\pause
+		
+		\draw [blue] (-1.04568,0) -- (-1.04568,-1.21842);	 											\pause
+		
+		\node (3) at (-1.04568,-1.21842) {\textsf{X}};												\pause
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{6.32288*\x+5.33027});					\pause
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{4.93807*\x+4.02045});					\pause
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{4.75103*\x+3.86547});					\pause
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{4.74736*\x+3.86248});					\pause
+	\end{tikzpicture} 
+\end{frame}
+
+\begin{frame}{Funktionswerte Werte}
+	\begin{table}[]
+		\centering
+		
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			Berechnungsschritt		& Funktionswert \\ \midrule
+			0                  			& -1,6029       \\
+			1                  			& -1,0456       \\
+			2                  			& -0,8430       \\
+			3                  			& -0,8141       \\
+			4                  			& -0,8136       \\
+			5                  			& -0,8136       \\
+			Berechneter Wert   		& -0,8136       \\ \bottomrule
+		\end{tabular}
+		\end{table}
+\end{frame}
 
 \section{Quellen}
 \subsection{Quellen-dots}
