@@ -127,7 +127,7 @@
 		\draw[color=red,smooth,samples=100,domain=-4.2:4.2] plot(\x,{0.5*(\x)^(3.0)-2.0*(\x)^(2.0)+0.5*(\x)+2.0});
 		
 		\begin{scriptsize}
-			\draw[color=ffqqqq] (2.1,5.2) node {$g(x) = 0,5x³ - 2x² + 0,5x + 2$};
+			\draw[color=ffqqqq] (2.1,5.2) node {$g(x) = 0,5x^3 - 2x^2 + 0,5x + 2$};
 		\end{scriptsize} 																	\pause
 		
 		\node (1) at (-1.60298,-6) {\textsf{X}};													\pause
@@ -188,16 +188,23 @@
 \begin{frame}{Beispiel zur Iterationsformel}
 	\begin{equation*}
 		\boxed{x_{n+1} = x_{n} - \frac{f(x_{n})}{f^\prime(x_{n})}}
-	\end{equation*}																		\pause
+	\end{equation*}
 
-	Vorgehensweise zur Berechnung von Nullstellen:													\pause
+	Vorgehensweise zur Berechnung von Nullstellen am Beispiel $f(x) = 0,5x^3 - 2x^2 + 0,5x + 2$:						\pause
 	\begin{itemize}
-		\item Funktion $f(x)$ ableiten															\pause
-		\item geeigneten Näherungswert als Startwert wählen $(x_0)$										\pause
-		\item diesen für $x_n$ einsetzen und $x_1$ berechnen											\pause
-		\item für $x_n$ nun $x_1$ wählen und $x_2$ berechnen											\pause
-		\item dieses Verfahren nun so lange wiederholen bis man die gewünschte Genauigkeit erreicht hat
+		\item $f(x)^\prime = 1,5x^2 - 4x + 0,5$													\pause
+		\item Startwert $x_0 = -1$															\pause
+		\item $x_{1} = (-1) - \frac{f(-1)}{f^\prime(-1)} = (-1) - \frac{0,5 \cdot (-1)^3 - 2 \cdot (-1)^2 + 0,5 \cdot (-1) + 2}{1,5 \cdot (-1)^2 - 4 \cdot (-1) + 0,5} \approx (-0,833)$	\pause
+		\item $x_{2} = (-0,833) - \frac{0,5 \cdot (-0,833)^3 - 2 \cdot (-0,833)^2 + 0,5 \cdot (-0,833) + 2}{1,5 \cdot (-0,833)^2 - 4 \cdot  + 0,5} \approx (-0,814)$	\pause
+		\item $x_{3} = (-0,814) - \frac{0,5 \cdot (-0,814)^3 - 2 \cdot (-0,814)^2 + 0,5 \cdot (-0,814) + 2}{1,5 \cdot (-0,814)^2 - 4 \cdot  + 0,5} \approx (-0,814)$
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Herleitung der Iterationsformel}
+	\begin{equation*}
+		\boxed{x_{n+1} = x_{n} - \frac{f(x_{n})}{f^\prime(x_{n})}}
+	\end{equation*}
+
 \end{frame}
 
 \section{Quellen}
