@@ -100,10 +100,10 @@
 
 \begin{frame}{Vorgehen bei Konstruktion}
 	\begin{itemize}
-		\item eine beliebige Abszisse als Startwert wählen, daraus den Funktionswert berechnen	\pause
-		\item an die berechnete Stelle des Graphens eine Tangente anlegen				\pause
-		\item den Schnittpunkt der Tangente mit der x-Achse berechnen					\pause
-		\item dieser Schnittpunkt kann nun als Startwert angenommen werden				\pause
+		\item eine beliebige Abszisse als Startwert wählen, daraus den Funktionswert berechnen						\pause
+		\item an die berechnete Stelle des Graphens eine Tangente anlegen									\pause
+		\item den Schnittpunkt der Tangente mit der x-Achse berechnen										\pause
+		\item dieser Schnittpunkt kann nun als Startwert angenommen werden									\pause
 		\item die Schritte so oft wiederholen bis man die gewünschte Genauigkeit erreicht hat
 	\end{itemize}
 \end{frame}
@@ -229,6 +229,21 @@
 \subsection{Anwendung-dots}
 
 \begin{frame}{Kehrwertbildung}
+	Kehrwertbildung von $A$:
+	\begin{itemize}
+		\item $\frac{1}{A} = x \rightarrow 0 = \frac{1}{x} - A$
+		\item Nullstelle von $f(x) = \frac{1}{x} - A$ gleich $\frac{1}{A}$
+		\item $f^\prime(x) = -\frac{1}{x²}$
+		\item daraus ergibt sich die Iterationsfunktion:
+			$\begin{array}{rl}
+				F(x)	&= x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}\\
+					&= x \cdot (2 - A \cdot x)
+			\end{array}$
+		\item optimaler Startwert: $x_0 = 4 \cdot (\sqrt{3} - 1) - 2$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiel zur Kehrwertbildung}
 \end{frame}
 
 \section{Fazit}
