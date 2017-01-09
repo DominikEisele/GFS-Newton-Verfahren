@@ -225,38 +225,6 @@
 	\end{itemize}
 \end{frame}
 
-\section{Anwendung}
-\subsection{Anwendung-dots}
-
-\begin{frame}{Kehrwertbildung}
-	Kehrwertbildung von $A$:
-	\begin{itemize}
-		\item $\frac{1}{A} = x \rightarrow 0 = \frac{1}{x} - A$
-		\item Nullstelle von $f(x) = \frac{1}{x} - A$ gleich $\frac{1}{A}$
-		\item $f^\prime(x) = -\frac{1}{x²}$
-		\item daraus ergibt sich die Iterationsfunktion:
-			$\begin{array}{rl}
-				F(x)	&= x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}					\\
-				F(x)	&= x \cdot (2 - A \cdot x)
-			\end{array}$
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Beispiel zur Kehrwertbildung}
-	Kehrwertbildung von $A = 3$:											\\
-	Startwert: $x_0 = 0,2$												\\
-	$x_n = x \cdot (2 - A \cdot x)$											\\
-	\\
-	$\begin{array}{rccl}
-		x_0 &	&								&= 0,2				\\
-		x_1 &=& 0,2 \cdot (2 - 3 \cdot 0,2) 				&= 0,3				\\
-		x_2 &=& 0,28 \cdot (2 - 3 \cdot 0,28) 				&= 0,3				\\
-		x_3 &=& 0,3248 \cdot (2 - 3 \cdot 0,3248)			&= 0,333				\\
-		x_4 &=& 0,33311488 \cdot (2 - 3 \cdot 0,33311488)		&= 0,333\,333			\\
-		x_5 &=& 0,3333331907 \cdot (2 - 3 \cdot 0,3333331907)	&= 0,333\,333\,333\,333
-	\end{array}$
-\end{frame}
-
 \section{Fazit}
 \subsection{Fazit-dots}
 
@@ -304,11 +272,60 @@
 	\end{figure}
 \end{frame}
 
+
+\section{Anwendung}
+\subsection{Anwendung-dots}
+
+\begin{frame}{Division über Kehrwertbildung}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{Tabelle.png}
+		\label{fig:Tabelle}
+	\end{figure}
+	\begin{itemize}
+		\item beim dividieren mit Multiplizierern(rot) werden deutlich weniger Takte(gelb) benötigt
+		\item beim dividieren mit Multiplizierern(rot) werden deutlich weniger Logikgatter(orange) benötigt
+		\item beim dividieren ohne Multiplizierern(rot) wird eine höhere Maximalfrequenz(grün) erreicht
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Kehrwertbildung}
+	Kehrwertbildung von $A$:																	\pause
+	\begin{itemize}
+		\item $\frac{1}{A} = x \rightarrow 0 = \frac{1}{x} - A$											\pause
+		\item Nullstelle von $f(x) = \frac{1}{x} - A$ gleich $\frac{1}{A}$										\pause
+		\item $f^\prime(x) = -\frac{1}{x²}$														\pause
+		\item daraus ergibt sich die Iterationsfunktion:
+			$\begin{array}{rl}
+				F(x)	&= x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}					\\
+				F(x)	&= x \cdot (2 - A \cdot x)
+			\end{array}$																\pause
+		\item pro Rechenschritt nur zwei Multiplikationen und eine Addition nötig									\pause
+		\item gut Verwendbar bei Schaltungen mit schnellen Addierern 
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiel zur Kehrwertbildung}
+	Kehrwertbildung von $A = 3$:											\\
+	Startwert: $x_0 = 0,2$												\\
+	$x_n = x \cdot (2 - A \cdot x)$											\\
+	\\
+	$\begin{array}{rccl}
+		x_0 &	&								&= 0,2				\\
+		x_1 &=& 0,2 \cdot (2 - 3 \cdot 0,2) 				&= 0,3				\\
+		x_2 &=& 0,28 \cdot (2 - 3 \cdot 0,28) 				&= 0,3				\\
+		x_3 &=& 0,3248 \cdot (2 - 3 \cdot 0,3248)			&= 0,333				\\
+		x_4 &=& 0,33311488 \cdot (2 - 3 \cdot 0,33311488)		&= 0,333\,333			\\
+		x_5 &=& 0,3333331907 \cdot (2 - 3 \cdot 0,3333331907)	&= 0,333\,333\,333\,333
+	\end{array}$
+\end{frame}
+
 \section{Quellen}
 \subsection{Quellen-dots}
 \begin{frame}{Quellen}
 	\begin{itemize}
 		\item An Accurate, High Speed Implementation of Division by Reciprocal Approximation, D.L. Fowler and J.E. Smith, Astronautics Corperation of Amerika
+		\item Floating-Point IP Cores User Guide
 		\item Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg
 		\item Rechnerarithmetik Thema: Iterative Division, Quadratwurzelberechnung, Eberhard Zehendner, Friedrich-Schiller-Universität Jena
 		\item hs-esslingen.de/fileadmin/medien/mitarbeiter/koch/\\numerische\_methoden\_skript.pdf (Abgerufen: 08.01.2017, 02:10 Uhr)
