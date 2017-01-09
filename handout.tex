@@ -1,0 +1,122 @@
+\documentclass[a4paper,oneside,DIV8]{scrartcl}
+  
+\usepackage[ngerman]{babel}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage[a4paper]{geometry} 
+\usepackage{pictex}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{pgf}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\makeatletter                             
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+
+ \newcommand{\handouttitle}[4]{
+ 	\begin{center}
+		\Large #4
+	\end{center}
+
+	\bigskip
+	\noindent
+	#1 (\textsf{#2})
+	\hfill
+	#3
+
+	\noindent
+	\rule{\linewidth}{.5pt}
+	\bigskip
+	\@afterindentfalse\@afterheading}
+	
+\makeatother
+\renewcommand{\sectfont}{\normalfont}
+
+\definecolor{ffqqqq}{rgb}{255,0,0}
+
+\geometry{a4paper, top=25mm, bottom=30mm} 
+
+\begin{document}
+
+\pagestyle{empty}
+
+\handouttitle{D.~Eisele}
+	{dominik\_eisele@gmx.de}
+	{\today}
+	{Newton Verfahren}
+
+\section{Ziel des Newton Verfahrens}
+	\begin{itemize}
+		\item Annäherung an die Nullstellen, über eine Linearisierung der Funktion an geeigneten Stellen
+		\item Lösung von allen nichtlinearen Gleichungen und Gleichungssystemen
+		\item Lösung von Gleichungen in der Form: $f(x) = 0$
+	\end{itemize}
+	
+\section{Vorgehen bei Konstruktion}
+	\begin{enumerate}
+		\item die Tangente der Funktion $f(x)$ im Startpunkt bestimmen
+		\item der Schnittpunkt der Tangente mit der x-Achse ist der neue Startpunkt
+		\item dieses Verfahren so oft wiederholen bis man die gewünschte Genauigkeit erreicht hat
+	\end{enumerate}
+	
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=0.4cm]
+		\draw[->,color=black] (-4.2,0.) -- (4.2,0.);
+		
+		\foreach \x in {-4,-3,...,-1,1,2,...,4}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+		
+		\draw[->,color=black] (0,-8.2) -- (0,8.2);
+		
+		\foreach \y in {-8,-6,...,-2,2,4,6}
+		\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+				
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		\clip(-4.2,-8.2) rectangle (4.2,8.2);
+		
+		\draw[color=red,smooth,samples=100,domain=-4.2:4.2] plot(\x,{0.5*(\x)^(3.0)-2.0*(\x)^(2.0)+0.5*(\x)+2.0});
+		
+		\begin{scriptsize}
+			\draw[color=ffqqqq] (2.1,5.2) node {$g(x) = 0,5x^3 - 2x^2 + 0,5x + 2$};
+		\end{scriptsize}
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{10.76624*\x+11.25802});
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{6.32288*\x+5.33027});
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{4.93807*\x+4.02045});
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{4.75103*\x+3.86547});
+		
+		\draw[color=green,smooth,samples=100,domain=-4.2:4.2] plot(\x,{4.74736*\x+3.86248});
+		
+		\node (1) at (-1.603,0) {\textsf{X}};
+		
+		\draw [blue] (-1.603,0) -- (-1.603,-6);
+
+		\node (2) at (-1.60298,-6) {\textsf{X}};
+		
+		\node (3) at (-1.04568,0) {\textsf{X}};
+		
+		\draw [blue] (-1.04568,0) -- (-1.04568,-1.21842);
+		
+		\node (4) at (-1.04568,-1.21842) {\textsf{X}};
+		
+		\node (5) at (-0.8136,0) {\textsf{X}};
+	\end{tikzpicture} 
+	
+\section{Iterationsformel}
+	\begin{equation*}
+		\boxed{x_{n+1} = x_{n} - \frac{f(x_{n})}{f^\prime(x_{n})}}
+	\end{equation*}
+
+	\begin{enumerate}
+		\item Startwert in der Nähe der Nullstelle wählen
+		\item Iteration so lange durchführen bis das gewünschte Ergebnis erzielt ist
+	\end{enumerate}
+
+\end{document}
