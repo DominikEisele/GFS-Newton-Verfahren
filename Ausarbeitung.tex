@@ -258,7 +258,17 @@
 			\label{fig:hupfen}
 		\end{figure}
 
+\newpage
 
+\section{Kehrwertberechnung}
+
+	Bei Schaltungen mit schnellen Multiplizierern kann es von Vorteil sein, wenn man anstatt zu dividieren mit dem Kehrbruch multipiziert. Den Kehrwert
+	für dieses Verfahren kann man mit dem Newton Verfahren berechnen. Um den Kehrwert von $A$ zu berechnen kann man die Fomel $x = \frac{1}{A}$
+	aufstellen, dabei ist $x$ der gesucht Kehrwert. Um das Newton-Verfahren anwenden zu können muss man die Formel auf die Form $f(x) = 0$ bringen.
+	Wenn man die Gleichung nun umformt, so erhält man $0 = \frac{1}{x} - A$. Die Nullstelle von $f(x) = \frac{1}{x} - A$ ist somit der Kehrwert von $A$.
+	Um die Funktion in die Iterationsformel einsetzten zu können muss man sie ableiten. Daraus ergibt sich $f^\prime(x) = -\frac{1}{x²}$. Setzt man diese
+	Funktionennun in die Gleichung ein, so ergibt sich als Iterationsfunktion $f(x) = x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}$. Stellt man dies nun um so hat
+	man $f(x) = x \cdot (2 - A \cdot x)$ als Iterationsfunktion zur Berechnung des Kehrwerts.
 
 \newpage
 
@@ -273,9 +283,4 @@
 		\item de.wikipedia.org/wiki/Newton-Verfahren (Abgerufen: 08.01.2017, 12:10 Uhr)
 	\end{itemize}
 
-
-
-
-
-	
 \end{document}
