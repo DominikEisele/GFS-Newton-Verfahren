@@ -90,6 +90,7 @@
 		Funktion. Über diese Linearisierung kann man sich nach und nach an die Nullstelle annähern.\\
 		Das Verfahren ist ein Annäherungsverfahren, bei dem sich die Genauigkeit pro Wiederholung des Verfahrens ungefär verdoppelt.
 		\footnote{de.wikipedia.org/wiki/Newton-Verfahren}
+		\footnote{Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg}
 		
 \newpage
 
@@ -102,7 +103,9 @@
 		$x_0$ ermitteln. Man legt nun an die Funktion $f(x) = 0$ im Punkt $P(x_0|f(x))$ eine Tangente an. Nun behandelt man die Stelle $x_1$, an der
 		die Tangente die x-Achse schneidet, wie die Stelle $x_0$ im vorrausgegangenen Schritt. Die Nullstelle der neu entstandenen, zweiten Tangente
 		ist nun eine bessere Näherung an die Nullstelle, und gleichzeitig auch $x_2$. Dieses Verfahren wiederholt man so oft bis man die gewünschte
-		Genauigkeit erreicht hat. \footnote{hs-esslingen.de/fileadmin/medien/mitarbeiter/koch/\\numerische\_methoden\_skript.pdf}
+		Genauigkeit erreicht hat.
+		\footnote{hs-esslingen.de/fileadmin/medien/mitarbeiter/koch/\\numerische\_methoden\_skript.pdf}
+		\footnote{Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg}
 		
 \newpage
 
@@ -210,11 +213,50 @@
 		$y = f^\prime(x_0) \cdot x  + f(x_0) - f^\prime(x_0) \cdot x_0$. Um die Nullstelle der Gleichung zu bestimmen setzt man die Gleichung gleich
 		null. So erhält man die Gleichung $0 = f^\prime(x_0) \cdot x_1  + f(x_0) - f^\prime(x_0) \cdot x_0$. Formt man diese nun nach $x$ um, so
 		erhält man die Iterationsformel $x_1 =x_0 - \frac{f(x_0)}{f^\prime(x_0)}$.
+		\footnote{hs-esslingen.de/fileadmin/medien/mitarbeiter/koch/\\numerische\_methoden\_skript.pdf}
+	
+\newpage
 		
+\section{Fazit}
+	\subsection{Vorteile des Newton-Verfahrens}
+		Beim Newton-Verfahren ist eine schnelle Konvergenz möglich, da sich die Anzahl an signifikanten Stellen pro Iterationsschritt ungefähr verodppelt.
+		Dabei ist nur ein Startwert ($x_0$) nötigum eine Konvergenz zu erziehlen. Die Nachteile und Probleme die entstehen können, sind durch eine
+		bessere Wahl des Startwerts vermeidbar.\\
+		Dabei sollte beachtet werden, dass in der Praxis der Einsatz vom Newton-Verfahren ungeeignet ist, zur sicheren Verwendung benötigt man eine
+		Mischform mit einem anderen Verfahren, sodass eine günstige Wahl des Startpunktes ermmöglicht wird.
+		\footnote{Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg}
+	
+	\subsection{Nachteile des Newton-Verfahrens}
+		Beim Newton-Verfahren ist keine Konvergenz garantiert. So kann es vorkommen dass, für ein $x_0$ in der Nähe von Sattelstellen oder auf
+		Sattelstellen, die Tangente parallel zur x-Achse verläft, oder die Steigung minimal ist so dass der Schnittpunkt sehr weit entfernt von der
+		Nullstelle ist. Dies ist in Abbildung \ref{fig:sattelstelle} zu sehen.\\
+		In Abbildung \ref{fig:ring} ist ein nichtkonvergenter Zyklus zu sehen. Bei so einem Zyklus rotieren die Werte immer, und es gibt keine Nullstelle.
+		Dies ist der Fall, wenn die Nullstelle einer Tangente gleich einem anderen Wert von $x_n$ ist.\\
+		Hat man eine oszillierdene Funktion, oder eine Funktion mit mehreren Nullstellen, so kann es passieren dass sich das Newton-Verfahren an eine
+		Nullstelle annähert, die deutlich weiter vom Startwert entfernt ist als eine andere.\\
+		All diese Fehler können durch einen anderen Startwert umgangen werden.
+		\footnote{Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg}
 
-
-
-
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{Sattelstelle.png}
+			\caption{Sattelpunkt}
+			\label{fig:sattelstelle}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{Ring.png}
+			\caption{Zyklus}
+			\label{fig:ring}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{hupfen.png}
+			\caption{Nullstellenspringen}
+			\label{fig:hupfen}
+		\end{figure}
 
 
 
