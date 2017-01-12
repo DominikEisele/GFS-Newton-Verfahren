@@ -200,19 +200,19 @@
 		Um Nullstellen einer Gleichung mit dem Newton-Verfahren zu lösen benötigt man die Iterationsformel (von lat. iterare "`wiederholen"').
 		Um die Nullstelle mit dieser Formel zu berechnen, benötigt man die zu lösende Funktion $f(x)$, sowie deren Ableitung $f^\prime(x)$ und einen
 		Startwert $x_0$. Um nun $x_1$ zu erhalten muss man $x_0$ in die Formel einsetzen. Der nun entstandene Wert $x_1$ ist die Annäherung an
-		die Nullstelle, benötigt man eine höhere Genauigkeit, so muss man $x_1$ erneut in die Formel einsetzen, bzw. die Iteration so lange durchführen
+		die Nullstelle. Benötigt man eine höhere Genauigkeit, so muss man $x_1$ erneut in die Formel einsetzen, bzw. die Iteration so lange durchführen
 		bis die gewünschte Genauigkeit erreicht ist.
 
 	\subsection{Herleitung}
 		Das Ziel des Newton-Verfahrens ist es die Nullstelle der Tangente zu berechnen. Da diese eine Gerade ist gilt die allgemeine Geradengleichung:
-		$y = mx + b$. Da man die Tangente an die Stelle Funktion anlegt, deren Abszisse $x_0$ und der Funktionswert $f(x_0)$ ist ergibt sich ein Punkt
+		$y = mx + b$. Da man die Tangente an die Stelle der Funktion anlegt, deren Abszisse $x_0$ und der Funktionswert $f(x_0)$ ist, ergibt sich ein Punkt
 		$P$ auf der Tangente, der die Koordinaten $P(x_0|f(x_0))$ besitzt. Da die Tangente im Berührpunkt $P$ an die Funktion angelegt wurde, besitzt
 		sie an Punkt $P$ dieselbe Steigung wie die Funktion $f(x)$, d.\,h. die Steigung der Tangente ist $f^\prime(x)$.\\
 		Setzt man diese Werte nun in die Geradengleichung ein, so ergibt sich die Gleichung $f(x_0) = f^\prime(x_0) \cdot x_0  + b$. Stellt man diese
 		nun nach $b$ um, so ergibt sich für $b$ die Gleichung $b = f(x_0) - f^\prime(x_0) \cdot x_0$.\\
 		Setzt man nun erneut alle Werte in die Geradengleichung ein, so erhält man folgende Geradengleichung für die Tangente:
 		$y = f^\prime(x_0) \cdot x  + f(x_0) - f^\prime(x_0) \cdot x_0$. Um die Nullstelle der Gleichung zu bestimmen setzt man die Gleichung gleich
-		null. So erhält man die Gleichung $0 = f^\prime(x_0) \cdot x_1  + f(x_0) - f^\prime(x_0) \cdot x_0$. Formt man diese nun nach $x$ um, so
+		Null. So erhält man die Gleichung $0 = f^\prime(x_0) \cdot x_1  + f(x_0) - f^\prime(x_0) \cdot x_0$. Formt man diese nun nach $x$ um, so
 		erhält man die Iterationsformel $x_1 =x_0 - \frac{f(x_0)}{f^\prime(x_0)}$.
 		\footnote{hs-esslingen.de/fileadmin/medien/mitarbeiter/koch/\\numerische\_methoden\_skript.pdf}
 	
@@ -221,17 +221,17 @@
 \section{Fazit}
 	\subsection{Vorteile des Newton-Verfahrens}
 		Beim Newton-Verfahren ist eine schnelle Konvergenz möglich, da sich die Anzahl an signifikanten Stellen pro Iterationsschritt ungefähr verdoppelt.
-		Dabei ist nur ein Startwert ($x_0$) nötig um eine Konvergenz zu erzihlen. Die Nachteile und Probleme die entstehen können, sind durch eine
+		Dabei ist nur ein Startwert ($x_0$) nötig um eine Konvergenz zu erzielen. Die Nachteile und Probleme die entstehen können, sind durch eine
 		bessere Wahl des Startwerts vermeidbar.\\
-		Dabei sollte beachtet werden, dass in der Praxis der Einsatz vom Newton-Verfahren ungeeignet ist, zur sicheren Verwendung benötigt man eine
+		Dabei sollte beachtet werden, dass in der Praxis der Einsatz vom Newton-Verfahren ungeeignet ist. Zur sicheren Verwendung benötigt man eine
 		Mischform mit einem anderen Verfahren, sodass eine günstige Wahl des Startpunktes ermöglicht wird.
 		\footnote{Practical Numerical Training UKNum Nullstellenbestimmung (roots), PD. Dr. C. Mordasini Max Planck Institute for Astronomy, Heidelberg}
 	
 	\subsection{Nachteile des Newton-Verfahrens}
 		Beim Newton-Verfahren ist keine Konvergenz garantiert. So kann es vorkommen dass, für ein $x_0$ in der Nähe von Sattelstellen oder auf
-		Sattelstellen, die Tangente parallel zur x-Achse verläuft, oder die Steigung minimal ist so dass der Schnittpunkt sehr weit entfernt von der
+		Sattelstellen die Tangente parallel zur x-Achse verläuft, oder die Steigung minimal ist so dass der Schnittpunkt sehr weit entfernt von der
 		Nullstelle ist. Dies ist in Abbildung \ref{fig:sattelstelle} zu sehen.\\
-		In Abbildung \ref{fig:ring} ist ein nichtkonvergenter Zyklus zu sehen. Bei so einem Zyklus rotieren die Werte immer, und es gibt keine Nullstelle.
+		In Abbildung \ref{fig:ring} ist ein nichtkonvergenter Zyklus zu sehen. Bei so einem Zyklus rotieren die Werte immer und es gibt keine Nullstelle.
 		Dies ist der Fall, wenn die Nullstelle einer Tangente gleich einem anderen Wert von $x_n$ ist.\\
 		Hat man eine oszillierende  Funktion, oder eine Funktion mit mehreren Nullstellen, so kann es passieren, dass sich das Newton-Verfahren an eine
 		Nullstelle annähert, die deutlich weiter vom Startwert entfernt ist als eine andere.\\
@@ -265,10 +265,10 @@
 
 	Bei Schaltungen mit schnellen Multiplizierern kann es von Vorteil sein, wenn man anstatt zu dividieren mit dem Kehrbruch multipliziert. Den Kehrwert
 	für dieses Verfahren kann man mit dem Newton Verfahren berechnen. Um den Kehrwert von $A$ zu berechnen kann man die Formel $x = \frac{1}{A}$
-	aufstellen, dabei ist $x$ der gesuchte Kehrwert. Um das Newton-Verfahren anwenden zu können muss man die Formel auf die Form $f(x) = 0$ bringen.
+	aufstellen, dabei ist $x$ der gesuchte Kehrwert. Um das Newton-Verfahren anwenden zu können, muss man die Formel auf die Form $f(x) = 0$ bringen.
 	Wenn man die Gleichung nun umformt, so erhält man $0 = \frac{1}{x} - A$. Die Nullstelle von $f(x) = \frac{1}{x} - A$ ist somit der Kehrwert von $A$.
-	Um die Funktion in die Iterationsformel einsetzten zu können muss man sie ableiten. Daraus ergibt sich $f^\prime(x) = -\frac{1}{x²}$. Setzt man diese
-	Funktionen nun in die Gleichung ein, so ergibt sich als Iterationsfunktion $f(x) = x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}$. Stellt man dies nun um, so hat
+	Um die Funktion in die Iterationsformel einsetzten zu können, muss man sie ableiten. Daraus ergibt sich $f^\prime(x) = -\frac{1}{x²}$. Setzt man diese
+	Funktionen nun in die Gleichung ein, so ergibt sich als Iterationsfunktion \\$f(x) = x- \frac{\frac{1}{x} - A}{-\frac{1}{x²}}$. Stellt man dies nun um, so hat
 	man $f(x) = x \cdot (2 - A \cdot x)$ als Iterationsfunktion zur Berechnung des Kehrwerts.
 
 \newpage
